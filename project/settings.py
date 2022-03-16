@@ -3,10 +3,10 @@ import os
 from dotenv import load_dotenv
 from environs import Env
 
+load_dotenv()
+
 env = Env()
 env.read_env()
-
-load_dotenv()
 
 db_engine = os.getenv('ENGINE')
 db_host = os.getenv('HOST')
