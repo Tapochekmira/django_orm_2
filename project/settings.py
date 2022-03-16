@@ -1,5 +1,6 @@
 import os
 
+import dj_database_url
 from dotenv import load_dotenv
 from environs import Env
 
@@ -8,23 +9,7 @@ load_dotenv()
 env = Env()
 env.read_env()
 
-db_engine = os.getenv('ENGINE')
-db_host = os.getenv('HOST')
-port = os.getenv('PORT')
-user_name = os.getenv('NAME')
-user_type = os.getenv('USER')
-user_password = os.getenv('PASSWORD')
-
-DATABASES = {
-    'default': {
-        'ENGINE': db_engine,
-        'HOST': db_host,
-        'PORT': port,
-        'NAME': user_name,
-        'USER': user_type,
-        'PASSWORD': user_password,
-    }
-}
+DATABASES = {'default': env.dj_db_url("DB_URL")}
 
 INSTALLED_APPS = ['datacenter']
 
