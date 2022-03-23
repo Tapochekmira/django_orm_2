@@ -11,20 +11,27 @@
     - активируйте виртуальное окружение:
   
     ```
-    . ./env/bin/activate
+     ./env/bin/activate
     ```
     - установите необходимые зависимости:
 
     ```
     pip install -r requirements.txt
     ```
-    - создайте файл `.env` в папке `project`. Пропишите в нем настройки БД по ключам.
-    Где `USER PASSWORD HOST PORT NAME` - настройки доступа БД
-    ```
-    DB_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
-    DEBUG=False
-    SECRET_KEY=q...y
-    ```
+    - В корневой директории создайте файл ```.env```.
+    - Пропишите в нем состояние переменных:
+      - `DEBUG` 
+      - `SECRET_KEY` 
+      - перечисление доступных доменов в `ALLOWED_HOSTS`
+      - пармаетры базы данных в `DB_URL` выбрав схему, [соответствующую вашей DB](https://github.com/jacobian/dj-database-url#url-schema) 
+
+      Пример для `PostgreSQL`:
+      ```
+      DEBUG=False
+      SECRET_KEY=R..........E
+      ALLOWED_HOSTS=www.example.com,www.another.com
+      DB_URL=postgres://g...d:o....g:5114/cas....asca
+      ```
 
     
 - Запустите сайт командой:
