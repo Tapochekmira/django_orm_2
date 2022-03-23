@@ -9,11 +9,11 @@ load_dotenv()
 env = Env()
 env.read_env()
 
-DATABASES = {'default': env.dj_db_url("DB_URL")}
+DATABASES = {'default': env.dj_db_url('DB_URL')}
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = env.str('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG')
 
