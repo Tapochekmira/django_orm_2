@@ -18,16 +18,15 @@
     ```
     pip install -r requirements.txt
     ```
-    - создайте файл `.env` в папке `project`. Пропишите в нем настройки БД по ключам:
+    - создайте файл `.env` в папке `project`. Пропишите в нем настройки БД по ключам.
+    Где `USER PASSWORD HOST PORT NAME` - настройки доступа БД
     ```
-    ENGINE=djang......sycopg2
-    HOST=che....rg
-    PORT=5...4
-    NAME=ch....nt
-    USER=....d
-    PASSWORD=....m5
+    DB_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
     DEBUG=False
+    SECRET_KEY=q...y
     ```
+
+    
 - Запустите сайт командой:
 
     ```
